@@ -20,11 +20,11 @@ class FileReader:
         for line in file:
             x = line.split()
             if flag:
-                self.mochila.setSize(x[0])    #number of items
-                self.mochila.setMaxW(x[1])    #maximun bag size
+                self.mochila.setSize(int(x[0]))    #number of items
+                self.mochila.setMaxW(int(x[1]))    #maximun bag size
                 flag = False
             else:
-                self.mochila.addItem(i, x[0], x[1])  #(index, item value, item weight)
+                self.mochila.addItem(i, int(x[0]), int(x[1]))  #(index, item value, item weight)
             i += 1
 
     def getBag(self):
